@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('../controllers/BookController.php') // コントローラーにリクエスト
+    fetch('../src/controllers/fetch_books.php')
         .then(response => response.json())
         .then(data => {
             const booksDataDiv = document.getElementById('books-data');
@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 booksDataDiv.innerHTML = '<p>Error: ' + data.error + '</p>';
             } else {
                 data.forEach(book => {
-                    booksDataDiv.innerHTML += `
-                        <p>ID: ${book.book_id}, Thickness: ${book.book_thickness}, Color: ${book.book_color}</p>
-                    `;
+                    booksDataDiv.innerHTML += `<p>ID: ${book.book_id}, Thickness: ${book.book_thickness}, Color: ${book.book_color}</p>`;
                 });
             }
         })
