@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 data.forEach(book => {
                     booksDataDiv.innerHTML += `
                         <p>ID: ${book.book_id}, Thickness: ${book.book_thickness}, Color: ${book.book_color}</p>
-                        <img src="..public/images/book_purple_1.png" alt="Book Image">
                     `;
                 });
             }
