@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "configurations": [ // 状況に合わせて以下3種類のデバッグ構成を使用すること
+    {
+      // JavaScript用デバッグ構成
+      "type": "node",
+      "request": "launch",
+      "name": "JavaScript",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${file}",
+      "cwd": "${fileDirname}"
+    },
+    {
+      // 結合テスト用 使用方法は以下
+      // 1.XAMPP起動
+      // 2.Apache起動
+      // 3.'php ファイル名'で実行するか、ブラウザから'localhost'にアクセスし、ファイルを開く
+      "name": "php 結合",
+      "type": "php",
+      "request": "launch",
+      "port": 9003
+    },
+    { // 単体テスト用、phpファイル単体でデバッグする
+      "name": "php 単体",
+      "type": "php",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${fileDirname}",
+      "port": 9003,
+      "runtimeExecutable": "php"
+    },
+    // {
+    //   // もしxdebugの構築に時間がかかりそうなら、この構成でechoしながらデバッグ
+    //   "name": "PHP Run",
+    //   "type": "php",
+    //   "request": "launch",
+    //   "program": "${file}",
+    //   "runtimeExecutable": "C:\\xampp\\php\\php.exe"      // xamppのphp.exeのディレクトリを指定(win macで異なる)
+    // },
+  ]
+}
