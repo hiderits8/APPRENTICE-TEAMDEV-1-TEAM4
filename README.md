@@ -59,3 +59,10 @@ https://nodejs.org/en/blog/release/v21.7.1#2024-03-08-version-2171-current-targo
 ## VS Code拡張機能
 PHP
 -> 静的解析、フォーマット(Alt + Shift + F)形式統一のため
+
+PHP Intelephense
+-> コーディング規約のため
+
+JavaScript Debugger (Nightly)
+-> JavaScriptデバッグのため
+
