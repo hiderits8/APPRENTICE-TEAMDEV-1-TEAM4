@@ -61,8 +61,10 @@ PHP
 -> 静的解析、フォーマット(Alt + Shift + F)形式統一のため
 
 PHP Intelephense
--> コーディング規約のため
+W3C Web Validator
+-> コーディング規約統一のため
 
 JavaScript Debugger (Nightly)
 -> JavaScriptデバッグのため
+
 
