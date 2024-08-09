@@ -1,8 +1,9 @@
 {
   "version": "0.2.0",
-  "configurations": [ // 状況に合わせて以下3種類のデバッグ構成を使用すること
+  "configurations": [
+    // 状況に合わせて以下3種類のデバッグ構成を使用すること
     {
-      // JavaScript用デバッグ構成
+      // JavaScript用デバッグ構成(要nodejsインストール)
       "type": "node",
       "request": "launch",
       "name": "JavaScript",
@@ -11,7 +12,7 @@
       "cwd": "${fileDirname}"
     },
     {
-      // 結合テスト用 使用方法は以下
+      // XAMPPでの結合テスト用 使用方法は以下
       // 1.XAMPP起動
       // 2.Apache起動
       // 3.'php ファイル名'で実行するか、ブラウザから'localhost'にアクセスし、ファイルを開く
@@ -20,7 +21,22 @@
       "request": "launch",
       "port": 9003
     },
-    { // 単体テスト用、phpファイル単体でデバッグする
+    {
+      // Docker結合テスト用 使用方法は以下
+      // 1.docker compose up でdocker起動
+      // 2.ブラウザから'localhost:80'にアクセスし、ファイルを開く
+      "name": "php 結合(Docker)",
+      "type": "php",
+      "request": "launch",
+      "port": 9003,
+      "pathMappings": { // docker内ディレクトリとのマッピング
+        "/var/www/html/src": "${workspaceFolder}/src",
+        "/var/www/html/public": "${workspaceFolder}/public"
+      }
+    },
+
+    {
+      // 単体テスト用、phpファイル単体でデバッグする
       "name": "php 単体",
       "type": "php",
       "request": "launch",
@@ -28,14 +44,14 @@
       "cwd": "${fileDirname}",
       "port": 9003,
       "runtimeExecutable": "php"
-    },
+    }
     // {
     //   // もしxdebugの構築に時間がかかりそうなら、この構成でechoしながらデバッグ
     //   "name": "PHP Run",
     //   "type": "php",
     //   "request": "launch",
     //   "program": "${file}",
-    //   "runtimeExecutable": "C:\\xampp\\php\\php.exe"      // xamppのphp.exeのディレクトリを指定(win macで異なる)
+    //   "runtimeExecutable": "C:\\xampp\\php\\php.exe"      // xamppのphp.exeのディレクトリを指定(win:where php mac:which php コマンド)
     // },
   ]
 }
