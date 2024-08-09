@@ -54,16 +54,16 @@ COPY ./config/php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 # ベースイメージは既存のDockerfileを使用
 # 新しい依存関係やツールを追加する場合は、ここに記載
 
-# Install Node.js (必要に応じて)
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs \
-    && npm install -g npm \
-    && npm install -g eslint
+# # Install Node.js (必要に応じて)
+# RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+#     && apt-get install -y nodejs \
+#     && npm install -g npm \
+#     && npm install -g eslint
 
-# PHP CodeSnifferのインストール
-RUN curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar \
-    && chmod +x phpcs.phar \
-    && mv phpcs.phar /usr/local/bin/phpcs
+# # PHP CodeSnifferのインストール
+# RUN curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar \
+#     && chmod +x phpcs.phar \
+#     && mv phpcs.phar /usr/local/bin/phpcs
 
-# PHP CodeSnifferのPSR規約設定
-RUN phpcs --config-set default_standard PSR12
+# # PHP CodeSnifferのPSR規約設定
+# RUN phpcs --config-set default_standard PSR12

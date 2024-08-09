@@ -1,0 +1,40 @@
+{
+    "name": "PHP Apache Development",
+    "dockerComposeFile": "../compose.yml",
+    "service": "web",
+    "workspaceFolder": "/var/www/html",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "bmewburn.vscode-intelephense-client",
+          "xdebug.php-debug",
+          "neilbrayfield.php-docblocker",
+          "esbenp.prettier-vscode",
+          "dbaeumer.vscode-eslint",
+          "squizlabs.phpcs"
+        ],
+        "settings": {
+          "php.validate.executablePath": "/usr/local/bin/php",
+          "phpcs.executablePath": "/usr/local/bin/phpcs",
+          "phpmd.executablePath": "/usr/local/bin/phpmd",
+          "phpfmt.psr1": true,
+          "phpfmt.psr2": true,
+          "editor.formatOnSave": true,
+          "eslint.validate": ["javascript", "html"]
+          //,
+        //   "[javascript]": {
+        //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+        //   },
+        //   "[html]": {
+        //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+        //   },
+        //   "[json]": {
+        //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+        //   }
+        }
+      }
+    },
+    "postCreateCommand": "composer install && npm install",
+    "remoteUser": "www-data"
+  }
+  
