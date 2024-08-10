@@ -5,11 +5,41 @@ MVCに基づくディレクトリ構造を採用した。
 ![image](https://github.com/user-attachments/assets/c4a2d3af-e80a-4394-be51-736db36ee346)
 
 
+# 前提となるVSCode拡張機能
+■ PHP
+バージョン:v1.49.15728
+発行者:DEVSENSE devsense.com
+-> 静的解析、フォーマット(Alt + Shift + F)形式統一のため
+
+■ PHP Debug
+バージョン:v1.35.0
+発行者:Xdebug xdebug.org
+-> Xdebugの使用に必要となるため
+
+■ PHP Intelephense
+バージョン:v1.12.2
+発行者:Ben Mewburn intelephense.com
+
+■ W3C Web Validator
+バージョン:v1.3.1
+発行者:Celian Riboulet
+-> コーディング規約統一のため
+
+■ JavaScript Debugger (Nightly)
+バージョン:v2024.8.817
+発行者:Microsoft microsoft.com
+-> JavaScriptデバッグのため
+
 
 # 【Dockerを使用する場合の手順】
 # リポジトリのクローン
 任意のディレクトリにリポジトリをクローン
 
+# Dockerコンテナの起動
+クローンしたディレクトリへ移動し、
+Docker Desktopを起動したうえで下記コマンドを実行
+
+docker compose up --build
 
 
 
@@ -66,8 +96,15 @@ https://nodejs.org/en/blog/release/v21.7.1#2024-03-08-version-2171-current-targo
 
 
 ## VS Code拡張機能
-PHP
+■ PHP
+バージョン:v1.49.15728
+開発者:DEVSENSE devsense.com
 -> 静的解析、フォーマット(Alt + Shift + F)形式統一のため
+
+■ PHP Debug
+バージョン:v1.35.0
+開発者:Xdebug xdebug.org
+-> Xdebugの使用に必要となるため
 
 PHP Intelephense
 W3C Web Validator
