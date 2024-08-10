@@ -35,14 +35,17 @@ MVCに基づくディレクトリ構造を採用した。
 ## 1.リポジトリのクローン
 任意のディレクトリにリポジトリをクローン
 
-## 2.Dockerコンテナの起動
+## 2.Docker Desktopのインストール
+https://www.docker.com/ja-jp/
+
+## 3.Dockerコンテナの起動
 クローンしたディレクトリへ移動し、  
 Docker Desktopを起動したうえで下記コマンドを実行  
 ```bash
 docker compose up --build
 ```
 
-## 3.状態の確認
+## 4.状態の確認
 http://localhost/public/ へアクセスし、
 以下のような表示となれば成功している。
 ```
