@@ -6,45 +6,57 @@ MVCに基づくディレクトリ構造を採用した。
 
 
 # 前提となるVSCode拡張機能
-■ PHP
-バージョン:v1.49.15728
-発行者:DEVSENSE devsense.com
--> 静的解析、フォーマット(Alt + Shift + F)形式統一のため
+■ PHP  
+バージョン:v1.49.15728  
+発行者:DEVSENSE devsense.com  
+-> 静的解析、フォーマット(Alt + Shift + F)形式統一のため  
 
-■ PHP Debug
-バージョン:v1.35.0
-発行者:Xdebug xdebug.org
--> Xdebugの使用に必要となるため
+■ PHP Debug  
+バージョン:v1.35.0  
+発行者:Xdebug xdebug.org  
+-> Xdebugの使用に必要となるため  
 
-■ PHP Intelephense
-バージョン:v1.12.2
-発行者:Ben Mewburn intelephense.com
+■ PHP Intelephense  
+バージョン:v1.12.2  
+発行者:Ben Mewburn intelephense.com  
 
-■ W3C Web Validator
-バージョン:v1.3.1
-発行者:Celian Riboulet
--> コーディング規約統一のため
+■ W3C Web Validator  
+バージョン:v1.3.1  
+発行者:Celian Riboulet  
+-> コーディング規約統一のため  
 
-■ JavaScript Debugger (Nightly)
-バージョン:v2024.8.817
-発行者:Microsoft microsoft.com
--> JavaScriptデバッグのため
+■ JavaScript Debugger (Nightly)  
+バージョン:v2024.8.817  
+発行者:Microsoft microsoft.com  
+-> JavaScriptデバッグのため  
 
 
-# 【Dockerを使用する場合の手順】
-# リポジトリのクローン
+# 【Dockerを使用する場合の構築手順】
+## 1.リポジトリのクローン
 任意のディレクトリにリポジトリをクローン
 
-# Dockerコンテナの起動
-クローンしたディレクトリへ移動し、
-Docker Desktopを起動したうえで下記コマンドを実行
-
+## 2.Dockerコンテナの起動
+クローンしたディレクトリへ移動し、  
+Docker Desktopを起動したうえで下記コマンドを実行  
+```bash
 docker compose up --build
+```
+
+## 3.状態の確認
+http://localhost/public/ へアクセスし、
+以下のような表示となれば成功している。
+```
+ID: 1, Thickness: 10, Color: red
+ID: 2, Thickness: 20, Color: blue
+ID: 3, Thickness: 15, Color: green
+```
 
 
+      
 
+  
 
-# 【XAMPPを使用する場合の手順】
+# 【XAMPPを使用する場合の構築手順】
 # リポジトリのクローン
 1.'xampp/htdocs'の中身を必要に応じてバックアップ  
 2.'xampp/htdocs'内にこのリポジトリをクローン  
