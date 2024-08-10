@@ -1,6 +1,5 @@
 services:
   apache:
-    # image: my-lamp-web
     build: . #Dockerfile
     ports:
       - "80:80"
@@ -21,7 +20,6 @@ services:
       # ルートユーザーパスワードを無効に設定
       # MYSQL_ROOT_PASSWORD: 
       MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
-      # MYSQL_DATABASE: bookshelf
       MYSQL_USER: a
       MYSQL_PASSWORD: a
     networks:
