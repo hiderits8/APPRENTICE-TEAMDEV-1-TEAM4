@@ -1,6 +1,6 @@
 services:
-  web:
-    image: my-lamp-web
+  apache:
+    # image: my-lamp-web
     build: . #Dockerfile
     ports:
       - "80:80"
@@ -8,20 +8,33 @@ services:
       - ./src:/var/www/html/src # htmlディレクトリをコンテナへマウント
       - ./public:/var/www/html/public
     working_dir: /var/www/html/public # 作業ディレクトリ
+    depends_on: # 起動順序指定
+      - mysql
+    networks:
+      - app-network
     command : "apache2-foreground" # apache2を実行
 
-  db:
-    image: mysql:8.4
+  mysql:
+    image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: a
-      MYSQL_DATABASE: mydb
+      # ルートユーザーパスワードを無効に設定
+      # MYSQL_ROOT_PASSWORD: 
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+      # MYSQL_DATABASE: bookshelf
       MYSQL_USER: a
       MYSQL_PASSWORD: a
+    networks:
+      - app-network
     ports:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
+
+# ApacheとMySQLの接続用ネットワーク
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   db_data:

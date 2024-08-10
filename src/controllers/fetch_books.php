@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$dsn = 'mysql:host=localhost;dbname=test;charset=utf8';
+$dsn = 'mysql:host=mysql;dbname=bookshelf;charset=utf8';
 $username = 'root';
 $password = '';
 
