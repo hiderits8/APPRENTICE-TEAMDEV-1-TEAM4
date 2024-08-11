@@ -1,6 +1,6 @@
 # ディレクトリ解説
 MVCに基づくディレクトリ構造を採用した。
-
+あああああ
 
 ![image](https://github.com/user-attachments/assets/c4a2d3af-e80a-4394-be51-736db36ee346)
 
